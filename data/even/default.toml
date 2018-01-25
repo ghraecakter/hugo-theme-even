@@ -41,6 +41,14 @@ categories = "Categories"
     zero =  "No Categories"
     other = "%d Categories In Total"
 
+  [counter.projects]
+    zero =  "No Projects"
+    other = "%d Projects In Total"
+
+  [counter.authors]
+    zero =  "None Authors"
+    other = "%d Authors In Total"
+
 [traffic]
   siteUV = "site uv: %s"
   sitePV = "site pv: %s"
