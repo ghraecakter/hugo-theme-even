@@ -41,5 +41,41 @@
         {{ end }}
       </div>
     </div>
+  {{ else if eq $name "projects" }}
+    <div class="tag-cloud">
+      <div class="tag-cloud-title">
+          {{ if eq $length 0 }}
+          {{ $lang.counter.projects.zero }}
+        {{ else }}
+          {{ printf $lang.counter.projects.other $length}}
+        {{ end }}
+      </div>
+      <div class="tag-cloud-tags">
+        {{ range $key, $value := $terms }}
+          <a href="{{ $name | urlize | relURL }}/{{ $value.Term | urlize }}/">
+            {{ $value.Term }}
+            <span class="tag-count">{{ len $value.Pages }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  {{ else if eq $name "authors" }}
+    <div class="tag-cloud">
+      <div class="tag-cloud-title">
+          {{ if eq $length 0 }}
+          {{ $lang.counter.authors.zero }}
+        {{ else }}
+          {{ printf $lang.counter.authors.other $length}}
+        {{ end }}
+      </div>
+      <div class="tag-cloud-tags">
+        {{ range $key, $value := $terms }}
+          <a href="{{ $name | urlize | relURL }}/{{ $value.Term | urlize }}/">
+            {{ $value.Term }}
+            <span class="tag-count">{{ len $value.Pages }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
   {{ end }}
 {{ end }}
